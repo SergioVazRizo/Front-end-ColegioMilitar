@@ -13,8 +13,7 @@ async function cargarBecas() {
         }
         const becas = await response.json();
         const tbody = document.getElementById('tablaCatalogoBeca').getElementsByTagName('tbody')[0];
-
-        // Limpiar la tabla antes de llenarla
+            // Limpiar la tabla antes de llenarla
         tbody.innerHTML = '';
 
         // Agregar las becas a la tabla

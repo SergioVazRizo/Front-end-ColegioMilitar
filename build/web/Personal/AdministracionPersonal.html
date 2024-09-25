@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Personal</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { width: 80%; margin: 0 auto; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; }
+        input, select { width: 100%; padding: 8px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 10px; border: 1px solid #ccc; }
+        th { background-color: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Administración de Personal</h1>
+
+        <!-- Formulario para registrar un nuevo empleado -->
+        <h2>Registrar Nuevo Empleado</h2>
+        <form id="empleadoForm">
+            <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="correo">Correo</label>
+                <input type="email" id="correo" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono</label>
+                <input type="text" id="telefono" required>
+            </div>
+            <div class="form-group">
+                <label for="curp">CURP</label>
+                <input type="text" id="curp" required>
+            </div>
+            <div class="form-group">
+                <label for="numeroEmpleado">Número de Empleado</label>
+                <input type="text" id="numeroEmpleado" maxlength="12" required>
+            </div>
+            <div class="form-group">
+                <label for="tipoContrato">Tipo de Contrato</label>
+                <select id="tipoContrato" required>
+                    <option value="Base">Base</option>
+                    <option value="Por honorarios">Por honorarios</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="fechaIngreso">Fecha de Ingreso</label>
+                <input type="date" id="fechaIngreso" required>
+            </div>
+            <div class="form-group">
+                <label for="grupo">Grupo</label>
+                <select id="grupo" required>
+                    <option value="Profesores">Profesores</option>
+                    <option value="Recursos Humanos">Recursos Humanos</option>
+                    <option value="Servicios Escolares">Servicios Escolares</option>
+                    <option value="Informática">Informática</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="estatus">Estatus</label>
+                <select id="estatus" required>
+                    <option value="Activo">Activo</option>
+                    <option value="Inactivo">Inactivo</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="area">Área</label>
+                <select id="area" required></select>
+            </div>
+            <button type="submit">Registrar Empleado</button>
+        </form>
+
+        <!-- Tabla para mostrar empleados registrados -->
+        <h2>Empleados Registrados</h2>
+        <table id="empleadosTable">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                    <th>CURP</th>
+                    <th>Número Empleado</th>
+                    <th>Tipo Contrato</th>
+                    <th>Fecha Ingreso</th>
+                    <th>Grupo</th>
+                    <th>Estatus</th>
+                    <th>Área</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- Formulario para gestionar áreas -->
+        <h2>Gestión de Áreas</h2>
+        <form id="areaForm">
+            <div class="form-group">
+                <label for="nombreArea">Nombre del Área</label>
+                <input type="text" id="nombreArea" required>
+            </div>
+            <button type="submit">Agregar Área</button>
+        </form>
+
+        <!-- Tabla para mostrar áreas registradas -->
+        <h2>Áreas Registradas</h2>
+        <table id="areasTable">
+            <thead>
+                <tr>
+                    <th>Nombre del Área</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script src="Areas.js" type="text/javascript"></script>
+</body>
+</html>
