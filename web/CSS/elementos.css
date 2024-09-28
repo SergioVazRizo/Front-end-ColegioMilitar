@@ -1,0 +1,81 @@
+/*
+En este css voy a poner estilos para elemtos generales 
+(Formularios, tablas, etc) pra que solo agreguen la clase a sus diseños
+*/
+
+/*Botones*/
+/* From Uiverse.io by cssbuttons-io */ 
+button {
+  --color: #686D76; /* Color gris claro */
+  font-family: inherit;
+  display: inline-block;
+  width: 8em;
+  height: 2.6em;
+  line-height: 2.5em;
+  margin: 20px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid var(--color);
+  transition: color 0.5s;
+  z-index: 1;
+  font-size: 17px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: var(--color);
+}
+
+button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+button:hover {
+  color: #EEEEEE; /* Color claro para el texto en hover */
+}
+
+button:before {
+  top: 100%;
+  left: 100%;
+  transition: all 0.7s;
+}
+
+button:hover:before {
+  top: -30px;
+  left: -30px;
+}
+
+button:active:before {
+  background: #686D76; /* Color gris claro */
+  transition: background 0s;
+}
+
+/*Elemento para cards*/
+.card {
+    width: auto; 
+    height: auto;
+    background-color: #EEEEEE; /* Fondo de tarjeta gris claro */
+    border-radius: 2rem;
+    border: #686D76 0.2rem solid; /* Borde gris claro */
+    transition: all 0.4s ease-in;
+    box-shadow: 0.4rem 0.4rem 0.6rem #00000040;
+    margin: 20px;  
+    padding: 20px; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center; 
+}
+
+.card:hover {
+    transform: translateY(-0.3rem);
+    border: #686D76 0.2em solid; /* Borde gris claro en hover */
+    border-radius: 2.5rem 0 2.5rem 0;
+}
+
+/* Diseño para tablas */
