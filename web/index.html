@@ -1,14 +1,33 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Colegio</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <!-- Aqui va ir el login y va a redireccionar a las vistas de mientras pongo los enlaces a las vistas -->
-        <!<!-- Si ven una vista que no esta creenla y agregan el archivo CSS de vistas principales que es general ya que deben ser iguales y solo cambia contenido -->
-        <a href="vistasPrincipales/vistaEstudiantes.html">Vista de estudiantes</a><br>
-        <a href="vistasPrincipales/vistaRH.html">Vista Recusros Humanos</a>
-    </body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Colegio Militarizado</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1>Portal Escolar</h1>
+            <h2>Inicio de Sesión</h2>
+            <form id="login-form">
+                <div class="input-box">
+                    <input type="text" id="username" name="username" required>
+                    <label>Usuario</label>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="password" name="password" required>
+                    <label>Contraseña</label>
+                </div>
+                <button type="submit">Iniciar Sesión</button>
+                <p class="error-message" id="error-message"></p>
+                <p class="forget-password"><a href="#">¿Olvidaste tu contraseña?</a></p>
+            </form>
+        </div>
+    </div>
+    <script src="javascript/login/Login.js" type="text/javascript"></script>
+</body>
 </html>
