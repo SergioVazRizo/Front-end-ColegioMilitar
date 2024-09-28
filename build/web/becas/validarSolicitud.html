@@ -1,41 +1,27 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div class="validacion-solicitudes">
-            <h2>Validación de Solicitudes</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nombre del Alumno</th>
-                        <th>Beca Solicitada</th>
-                        <th>Estado</th>
-                        <th>Comentarios</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Alumno Ejemplo 1</td>
-                        <td>Beca Ejemplo 1</td>
-                        <td>
-                            <select>
-                                <option>Aceptada</option>
-                                <option>Rechazada</option>
-                            </select>
-                        </td>
-                        <td><input type="text" placeholder="Comentarios"></td>
-                        <td>
-                            <button>Actualizar</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-    </body>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Solicitudes</title>
+</head>
+<body>
+    <h1>Solicitudes de Beca</h1>
+    <table id="solicitudesTable">
+        <thead>
+            <tr>
+                <th>Numero de Solicitud</th>
+                <th>Nombre del Alumno</th>
+                <th>Beca Solicitada</th>
+                <th>Estado</th>
+                <th>Comentarios</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="solicitudesBody">
+            <!-- Las filas se llenarán aquí con JavaScript -->
+        </tbody>
+    </table>
+    <script src="../javascript/becas/validarSolicitudes.js" type="text/javascript"></script>
+</body>
 </html>
