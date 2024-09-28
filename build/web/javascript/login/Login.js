@@ -10,14 +10,14 @@ document.getElementById("login-form").addEventListener("submit", function(event)
         .then(response => response.json())
         .then(response => {
             if (response.mensaje === "Acceso permitido") {
-                // Limpiar el localStorage y guardar los datos
+                
                 localStorage.clear();
                 localStorage.setItem('rol', response.rol);
                 localStorage.setItem('matricula', response.matricula);
                 
                
                 Swal.fire("Bienvenido", "Acceso permitido", "success").then(() => {
-                    // Redirigir a la otra vista cuando el usuario presione OK
+                    
                     location.href = "http://localhost:8080/colegioMilitarFront/PrincipalPrueba.html";
                 });
                 
