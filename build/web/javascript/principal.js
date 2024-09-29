@@ -54,6 +54,7 @@ function cargarNavegacion() {
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="becas/validarSolicitud.html">Validar Solicitudes</a></li>
                                     <li><a class="dropdown-item" href="becas/ResultadosBecas.html">Resultados</a></li>
+                                    <li><a class="dropdown-item" href="becas/agregarBecas.html">Nuevas Becas</a></li>
                                 </ul>
                             </li>
                         </ul>
