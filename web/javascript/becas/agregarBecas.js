@@ -58,7 +58,7 @@ function cargarNavegacion() {
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Becas</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="../becas/CatalogoBecas.html">Registrarse</a></li>
+                                    <li><a class="dropdown-item" href="../becas/validarSolicitud.html">Validar Solicitudes</a></li>
                                     <li><a class="dropdown-item" href="../becas/ResultadosBecas.html">Resultados</a></li>
                                     <li><a class="dropdown-item" href="../becas/agregarBecas.html">Nuevas Becas</a></li>
                                 </ul>

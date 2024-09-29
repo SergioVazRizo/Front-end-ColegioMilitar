@@ -58,6 +58,7 @@ function cargarNavegacion() {
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="../becas/validarSolicitud.html">Validar Solicitudes</a></li>
                                     <li><a class="dropdown-item" href="../becas/ResultadosBecas.html">Resultados</a></li>
+                                    <li><a class="dropdown-item" href="../becas/agregarBecas.html">Nuevas Becas</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -83,18 +84,26 @@ async function cargarSolicitudesAceptadas() {
         
         // Verifica si hay solicitudes aceptadas
         if (solicitudesFiltradas.length === 0) {
-            alert('No hay solicitudes aceptadas.');
+            Swal.fire({
+                icon: 'info',
+                title: 'Sin solicitudes aceptadas',
+                text: 'No hay solicitudes aceptadas en este momento.',
+            });
         }
         
         solicitudesAceptadas.push(...solicitudesFiltradas);
         renderizarSolicitudesAceptadas();
     } catch (error) {
         console.error('Error al cargar las solicitudes:', error);
-        alert('Error al cargar las solicitudes: ' + error.message);
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Error al cargar las solicitudes: ' + error.message,
+        });
     }
 }
 
-// Función para cargar las solicitudes aceptadas
+// Función para cargar las solicitudes rechazadas
 async function cargarSolicitudesRechazadas() {
     try {
         const response = await fetch('http://localhost:8082/api/solicitudBeca');
@@ -107,18 +116,18 @@ async function cargarSolicitudesRechazadas() {
         
         const solicitudesFiltradas = data.filter(solicitud => solicitud.estadoSolicitud === 'Rechazada');
         
-        // Verifica si hay solicitudes aceptadas
-        if (solicitudesFiltradas.length === 0) {
-            alert('No hay solicitudes aceptadas.');
-        }
-        
         solicitudesAceptadas.push(...solicitudesFiltradas);
         renderizarSolicitudesAceptadas();
     } catch (error) {
         console.error('Error al cargar las solicitudes:', error);
-        alert('Error al cargar las solicitudes: ' + error.message);
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Error al cargar las solicitudes: ' + error.message,
+        });
     }
 }
+
 
 // Función para renderizar la tabla de solicitudes aceptadas
 function renderizarSolicitudesAceptadas() {

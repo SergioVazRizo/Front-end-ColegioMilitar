@@ -55,8 +55,9 @@ function cargarNavegacion() {
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Becas</a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="validarSolicitud.html">Validar Solicitudes</a></li>
-                                    <li><a class="dropdown-item" href="ResultadosBecas.html">Resultados</a></li>
+                                    <li><a class="dropdown-item" href="../becas/validarSolicitud.html">Validar Solicitudes</a></li>
+                                    <li><a class="dropdown-item" href="../becas/ResultadosBecas.html">Resultados</a></li>
+                                    <li><a class="dropdown-item" href="../becas/agregarBecas.html">Nuevas Becas</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -127,12 +128,25 @@ async function actualizarSolicitud(id) {
     });
 
     if (response.ok) {
-        alert('Solicitud actualizada con éxito');
+        // Usar SweetAlert para mostrar éxito
+        Swal.fire({
+            title: '¡Éxito!',
+            text: 'Solicitud actualizada con éxito',
+            icon: 'success',
+            confirmButtonText: 'Aceptar'
+        });
         cargarSolicitudes(); // Recargar las solicitudes para reflejar cambios
     } else {
-        alert('Error al actualizar la solicitud');
+        // Usar SweetAlert para mostrar error
+        Swal.fire({
+            title: 'Error',
+            text: 'Hubo un problema al actualizar la solicitud',
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+        });
     }
 }
+
 
 // Cargar solicitudes al inicio
 cargarSolicitudes();
