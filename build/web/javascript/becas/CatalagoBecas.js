@@ -13,7 +13,7 @@ function cargarNavegacion() {
         navbarContainer.innerHTML = `
             <nav class="navbar navbar-dark bg-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="../vistasPrincipales/vistaEstudiantes.html">Soy estudiante</a>
+                    <a class="navbar-brand" href="../PrincipalPrueba.html">Soy estudiante</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -21,7 +21,7 @@ function cargarNavegacion() {
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav me-auto mb-2">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="../vistasPrincipales/vistaEstudiantes.html">Inicio</a>
+                                <a class="nav-link active" aria-current="page" href="../PrincipalPrueba.html">Inicio</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Link</a>
@@ -42,7 +42,7 @@ function cargarNavegacion() {
         navbarContainer.innerHTML = `
             <nav class="navbar navbar-dark bg-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="../vistasPrincipales/vistaEstudiantes.html">Servicios Escolares</a>
+                    <a class="navbar-brand" href="../PrincipalPrueba.html">Servicios Escolares</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -50,7 +50,7 @@ function cargarNavegacion() {
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav me-auto mb-2">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="../vistasPrincipales/vistaEstudiantes.html">Inicio</a>
+                                <a class="nav-link active" aria-current="page" href="../PrincipalPrueba.html">Inicio</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Link</a>
