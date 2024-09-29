@@ -3,6 +3,12 @@ En este css voy a poner estilos para elemtos generales
 (Formularios, tablas, etc) pra que solo agreguen la clase a sus diseños
 */
 
+/*import de la fuente*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    font-family: "Roboto", sans-serif;
+}
 /*Botones*/
 /* From Uiverse.io by cssbuttons-io */
 button {
