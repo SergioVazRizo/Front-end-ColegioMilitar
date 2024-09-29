@@ -97,7 +97,7 @@ async function cargarBecas() {
             const boton = document.createElement('button');
             boton.innerHTML = 'Registrarse';
             boton.id = `btn-registrarse-${beca.becaId}`;
-            boton.onclick = function() {
+            boton.onclick = function () {
                 registrarse(beca.becaId);
             };
 
@@ -145,49 +145,33 @@ function registrarse(becaId) {
         return;
     }
 
-    // Verificar si la beca está activa
-    fetch(BASE_URL_BECA + `becas/${becaId}`) // Suponiendo que tienes un endpoint que devuelve la beca por ID
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Error al verificar la beca: ' + response.status);
-            }
-            return response.json();
-        })
-        .then(beca => {
-            if (!beca.activa) { // Asumiendo que hay una propiedad 'activa' en la respuesta
-                Swal.fire('Error', 'La beca no está activa.', 'error');
-                return;
-            }
+    const solicitudBeca = {
+        beca: {becaId: becaId},
+        alumnoId: alumnoId, // Usar el alumnoId desde localStorage
+        estadoSolicitud: 'Pendiente',
+        comentariosSolicitud: null
+    };
 
-            const solicitudBeca = {
-                beca: { becaId: becaId },
-                alumnoId: alumnoId,
-                estadoSolicitud: 'Pendiente',
-                comentariosSolicitud: null
-            };
-
-            return fetch(BASE_URL_BECA + "solicitudBeca", {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(solicitudBeca),
-            });
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Error en la solicitud: ' + response.status);
-            }
-            Swal.fire('Éxito', `Te has registrado para la beca`, 'success');
-            document.getElementById(`btn-registrarse-${becaId}`).disabled = true;
-            document.getElementById(`btn-registrarse-${becaId}`).innerHTML = 'Ya registrado';
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            Swal.fire('Error', 'Hubo un error al registrar la solicitud de beca.', 'error');
-        });
+    fetch(BASE_URL_BECA + "solicitudBeca", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(solicitudBeca),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error en la solicitud: ' + response.status);
+        }
+        Swal.fire('Éxito', `Te has registrado para la beca`, 'success');
+        document.getElementById(`btn-registrarse-${becaId}`).disabled = true;
+        document.getElementById(`btn-registrarse-${becaId}`).innerHTML = 'Ya registrado';
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        Swal.fire('Error', 'Hubo un error al registrar la solicitud de beca.', 'error');
+    });
 }
-
 
 // Cargar las becas cuando la página se carga
 window.onload = cargarBecas, cargarNavegacion();

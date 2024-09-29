@@ -80,24 +80,26 @@ function agregarBeca(event) {
         estatus: document.getElementById('estatus').value
     };
 
-    fetch(BASE_URL_BECA + 'becas', {
+    fetch(BASE_URL_BECA + 'beca', { 
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(beca),
+        body: JSON.stringify(beca), 
     })
     .then(response => {
         if (!response.ok) {
             throw new Error('Error al agregar la beca: ' + response.status);
+                    console.log(data);
         }
         Swal.fire('Éxito', 'Beca agregada correctamente.', 'success');
-        document.getElementById('formAgregarBeca').reset();
+        document.getElementById('formAgregarBeca').reset(); // Resetea el formulario
     })
     .catch(error => {
         console.error('Error:', error);
         Swal.fire('Error', 'Hubo un error al agregar la beca.', 'error');
     });
 }
+
 
 window.onload = cargarNavegacion();
