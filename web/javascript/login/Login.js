@@ -13,12 +13,16 @@ document.getElementById("login-form").addEventListener("submit", function(event)
                 
                 localStorage.clear();
                 localStorage.setItem('rol', response.rol);
-                localStorage.setItem('matricula', response.matricula);
-                
-               
+                localStorage.setItem('matricula', response.matricula);   
+                localStorage.setItem('nombre', response.nombreEstudiante);
+                localStorage.setItem('estatus', response.estatus);
                 Swal.fire("Bienvenido", "Acceso permitido", "success").then(() => {
-                    
-                    location.href = "http://localhost:8080/colegioMilitarFront/PrincipalPrueba.html";
+                        if (response.rol==="TI") {
+                            location.href = "http://localhost:8080/colegioMilitarFront/moduloUsuarios/Usuarios.html";
+                        }else{
+                             location.href = "http://localhost:8080/colegioMilitarFront/PrincipalPrueba.html";
+                        }
+                   
                 });
                 
             } else {

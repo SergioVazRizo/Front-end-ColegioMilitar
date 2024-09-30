@@ -1,10 +1,10 @@
 // Barre de navegacion
 function cargarNavegacion() {
-    const rol = localStorage.getItem('rol'); // Obtener el rol del usuario desde localStorage
-    const navbarContainer = document.getElementById('navbar'); // Asumiendo que tienes un div con id "navbar" en tu HTML
+const rol = localStorage.getItem('rol'); // Obtener el rol del usuario desde localStorage
+        const navbarContainer = document.getElementById('navbar'); // Asumiendo que tienes un div con id "navbar" en tu HTML
 
-    if (rol === 'ESTUDIANTE') {
-        navbarContainer.innerHTML = `
+        if (rol === 'ESTUDIANTE') {
+navbarContainer.innerHTML = `
             <nav class="navbar navbar-dark bg-dark">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="PrincipalPrueba.html">Soy estudiante</a>
@@ -32,8 +32,8 @@ function cargarNavegacion() {
                 </div>
             </nav>
         `;
-    } else if (rol === 'ESCOLAR') {
-        navbarContainer.innerHTML = `
+        } else if (rol === 'ESCOLAR') {
+navbarContainer.innerHTML = `
             <nav class="navbar navbar-dark bg-dark">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="PrincipalPrueba.html">Servicios Escolares</a>
@@ -62,7 +62,7 @@ function cargarNavegacion() {
                 </div>
             </nav>
         `;
-    }
+        } 
 }
 
 window.onload = cargarNavegacion();
