@@ -23,9 +23,6 @@ function cargarNavegacion() {
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="../PrincipalPrueba.html">Inicio</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Becas</a>
                                 <ul class="dropdown-menu">
@@ -51,9 +48,6 @@ function cargarNavegacion() {
                         <ul class="navbar-nav me-auto mb-2">
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="../PrincipalPrueba.html">Inicio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Becas</a>
