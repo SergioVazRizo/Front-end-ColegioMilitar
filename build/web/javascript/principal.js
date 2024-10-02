@@ -63,7 +63,7 @@ function cargarNavegacion() {
                                 <a class="nav-link active" aria-current="page" href="PrincipalPrueba.html">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="../grupos/grupos.html">Inicio</a>
+                                <a class="nav-link active" aria-current="page" href="grupos/grupos.html">grupos</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Becas</a>
