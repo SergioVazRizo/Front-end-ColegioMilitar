@@ -206,8 +206,22 @@ function validarContraseña() {
 }
 
 function cerrarSesion() {
-    window.location.href = "http://localhost:8080/colegioMilitarFront/";
+    Swal.fire({
+        title: '¿Estás seguro?',
+        text: "Estás a punto de cerrar sesión",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, cerrar sesión',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = "http://localhost:8080/colegioMilitarFront/";
+        }
+    });
 }
+
 
 function openModal1() {
     const modal = document.getElementById("abrirModal");
