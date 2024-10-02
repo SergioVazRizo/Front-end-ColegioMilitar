@@ -56,7 +56,7 @@ function clean() {
 }
 
 function agregarUsuario() {
- 
+
     const nombreUsuario = document.getElementById("usuario").value;
     const nombreEstudiante = document.getElementById("nombreUsuario").value;
     const contraseña = document.getElementById("contraseña").value;
@@ -65,7 +65,7 @@ function agregarUsuario() {
     const estatus = document.getElementById("estatus").value;
     const rolId = document.getElementById("rol").value;
 
-   
+
     const usuarioData = {
         nombreUsuario: nombreUsuario,
         nombreEstudiante: nombreEstudiante,
@@ -74,11 +74,11 @@ function agregarUsuario() {
         matricula: matricula,
         estatus: estatus,
         rol: {
-            rolId: parseInt(rolId) 
+            rolId: parseInt(rolId)
         }
     };
 
-   
+
     fetch("http://localhost:8081/api/addUsuario", {
         method: "POST",
         headers: {
@@ -88,13 +88,13 @@ function agregarUsuario() {
     })
             .then(response => {
                 if (response.ok) {
-                    return response.text(); 
+                    return response.text();
                 } else {
                     throw new Error(`Error ${response.status}: ${response.statusText}`);
                 }
             })
             .then(message => {
-             
+
                 let tam = message.length;
                 //alert(tam);
                 if (tam === 32) {
@@ -118,16 +118,16 @@ function agregarUsuario() {
 }
 
 
-let selectedMatricula = ""; 
+let selectedMatricula = "";
 
 function openModal() {
     const modal = document.getElementById("updatePasswordModal");
-    modal.style.display = "block"; 
+    modal.style.display = "block";
 }
 
 function closeModal() {
     const modal = document.getElementById("updatePasswordModal");
-    modal.style.display = "none"; 
+    modal.style.display = "none";
 }
 
 function seleccionarUsuario(nombre, matricula, correo, estatus, rolNombre, usuario, contraseña) {
@@ -138,23 +138,23 @@ function seleccionarUsuario(nombre, matricula, correo, estatus, rolNombre, usuar
     document.getElementById("usuario").value = usuario;
     document.getElementById("contraseña").value = contraseña;
 
-    selectedMatricula = matricula; 
+    selectedMatricula = matricula;
 
     const rolSelect = document.getElementById("rol");
     rolSelect.value = "";
 
     for (let option of rolSelect.options) {
         if (option.text === rolNombre) {
-            rolSelect.value = option.value; 
+            rolSelect.value = option.value;
             break;
         }
     }
 }
 
 function actualizarContraseña() {
-    
+
     const newPassword = document.getElementById("newPassword").value;
-    document.getElementById("newPassword").value="";
+    document.getElementById("newPassword").value = "";
     const requestBody = {
         matricula: selectedMatricula,
         newPassword: newPassword
@@ -167,44 +167,97 @@ function actualizarContraseña() {
         },
         body: JSON.stringify(requestBody)
     })
-    .then(response => {
-        if (response.ok) {
-            return response.text(); 
-        } else {
-            throw new Error(`Error ${response.status}: ${response.statusText}`);
-        }
-    })
-    .then(message => {
-        Swal.fire(message, "", "success");
-        closeModal(); 
-        cargarUsuarios(); 
+            .then(response => {
+                if (response.ok) {
+                    return response.text();
+                } else {
+                    throw new Error(`Error ${response.status}: ${response.statusText}`);
+                }
+            })
+            .then(message => {
+                Swal.fire(message, "", "success");
+                closeModal();
+                cargarUsuarios();
                 clean();
-    })
-    .catch(error => {
-        Swal.fire("Error al actualizar la contraseña: " + error.message, "", "error");
-    });
+            })
+            .catch(error => {
+                Swal.fire("Error al actualizar la contraseña: " + error.message, "", "error");
+            });
 }
 
 
-function validarContraseña(){
+function validarContraseña() {
     const nombreUsuario = document.getElementById("usuario").value;
     const nombreEstudiante = document.getElementById("nombreUsuario").value;
     const contraseña = document.getElementById("contraseña").value;
-    
-    if (nombreEstudiante==="" && nombreUsuario===""&& contraseña==="") {
+
+    if (nombreEstudiante === "" && nombreUsuario === "" && contraseña === "") {
         Swal.fire({
-        title: "Selecciona un usuario",
-        icon: "error",
-        animation: true, // Activa la animación
-        customClass: {
-            popup: 'animated bounce' // Agrega la clase de animación
-        }
-    });
-    }else{
+            title: "Selecciona un usuario",
+            icon: "error",
+            animation: true,
+            customClass: {
+                popup: 'animated bounce'
+            }
+        });
+    } else {
         openModal();
     }
 }
 
-function cerrarSesion(){
+function cerrarSesion() {
     window.location.href = "http://localhost:8080/colegioMilitarFront/";
+}
+
+function openModal1() {
+    const modal = document.getElementById("abrirModal");
+    modal.style.display = "block";
+}
+
+function closeModal1() {
+    const modal = document.getElementById("abrirModal");
+    modal.style.display = "none";
+}
+
+function agregarRol() {
+
+    const nombreRol = document.getElementById("rolAdd").value.trim();
+
+
+    if (!nombreRol) {
+        Swal.fire("El nombre del rol es obligatorio", "Error", "warning");
+        return;
+    }
+
+    const rolData = {
+        nombreRol: nombreRol
+    };
+
+    fetch("http://localhost:8081/api/addRol", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(rolData)
+    })
+            .then(response => {
+                if (response.ok) {
+                    return response.text();
+                } else {
+                    throw new Error(`Error ${response.status}: ${response.statusText}`);
+                }
+            })
+            .then(message => {
+            
+                Swal.fire(message, "", "success");
+
+                document.getElementById("rolAdd").value = "";
+                closeModal1();
+                cargarRoles();
+
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                Swal.fire("Error al agregar el rol: " + error.message, "Error", "error");
+            });
 }
