@@ -181,3 +181,9 @@ document.getElementById('areaForm').addEventListener('submit', async function (e
 // Inicializar la carga de datos
 loadAreas();
 loadEmpleados();
+
+
+
+function cerrarSesion(){
+    window.location.href = "http://localhost:8080/colegioMilitarFront/";
+}

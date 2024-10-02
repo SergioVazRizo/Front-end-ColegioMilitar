@@ -14,9 +14,13 @@ function cargarNavegacion() {
             <nav class="navbar navbar-dark bg-dark">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="../PrincipalPrueba.html">Soy estudiante</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+
+                    <div class="ms-auto d-flex align-items-center"> <!-- Alineación a la derecha -->
+                        <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <button class="btn btn-outline-light" onclick="cerrarSesion()">Cerrar sesión</button>
+                    </div>
 
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav me-auto mb-2">
@@ -40,9 +44,13 @@ function cargarNavegacion() {
             <nav class="navbar navbar-dark bg-dark">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="../PrincipalPrueba.html">Servicios Escolares</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+
+                    <div class="ms-auto d-flex align-items-center"> <!-- Alineación a la derecha -->
+                        <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <button class="btn btn-outline-light" onclick="cerrarSesion()">Cerrar sesión</button>
+                    </div>
 
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav me-auto mb-2">
@@ -65,6 +73,9 @@ function cargarNavegacion() {
     }
 }
 
+function cerrarSesion(){
+    window.location.href = "http://localhost:8080/colegioMilitarFront/";
+}
 
 // Función para cargar las becas
 async function cargarBecas() {
