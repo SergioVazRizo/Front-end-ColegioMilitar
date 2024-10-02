@@ -45,12 +45,14 @@
 </head>
 <body onload="cargarRoles(); cargarUsuarios()">
     <header>
-        <nav class="navbar navbar-dark bg-dark" style="height: 100px">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="PrincipalPrueba.html">AREA DE TI</a>
-            </div>
-        </nav>
-    </header>
+    <nav class="navbar navbar-dark bg-dark" style="height: 100px">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="PrincipalPrueba.html">AREA DE TI</a>
+            <button class="btn btn-outline-light ms-auto" onclick="cerrarSesion()">Cerrar sesión</button>
+        </div>
+    </nav>
+</header>
+
     <div class="container mt-4">
         <div class="row">
             <!-- Columna del formulario -->
@@ -95,6 +97,7 @@
                             <button type="button" class="btn btn-success" onclick="agregarUsuario()">Agregar</button>
                             <button type="button" class="btn btn-primary" onclick="clean()">Limpiar</button>
                             <button type="button" class="btn btn-warning" onclick="validarContraseña()">Actualizar Contraseña</button>
+                            <button type="button" class="btn btn-warning" onclick="openModal1()">Agregar Rol</button>
                         </form>
                     </div>
                 </div>
@@ -138,6 +141,17 @@
             <input type="password" id="newPassword" class="form-control" placeholder="Nueva Contraseña" required>
             <button type="button" class="btn btn-primary" onclick="actualizarContraseña()">Aceptar</button>
             <button type="button" class="btn btn-secondary" onclick="closeModal()">Cerrar</button>
+        </div>
+    </div>
+    
+    <!-- Modal para agregar un rol -->
+    <div id="abrirModal" class="modal">
+        <div class="modal-content">
+            <h4>Agregar un Rol</h4>
+            <label for="newPassword">Nuevo Rol</label>
+            <input type="text" id="rolAdd" class="form-control" placeholder="Rol" required>
+            <button type="button" class="btn btn-primary" onclick="agregarRol()">Aceptar</button>
+            <button type="button" class="btn btn-secondary" onclick="closeModal1()">Cerrar</button>
         </div>
     </div>
 
